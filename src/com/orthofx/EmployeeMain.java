@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class EmployeeMain {
 	private static Map<Integer, Employee> employeeTable = new HashMap<>();
 	private static Map<Integer, Department> deptTable = new HashMap<>();
+	static int i=0;
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
@@ -109,7 +110,8 @@ public class EmployeeMain {
 	}
 
 	public static Employee createEmployeeFunc(String empName, Department dept) {
-		Employee emp = new Employee(employeeTable.size() + 1, empName, dept);
+		i++;
+		Employee emp = new Employee(i , empName, dept);
 		employeeTable.put(emp.getId(), emp);
 		return emp;
 	}
